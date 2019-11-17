@@ -42,9 +42,24 @@ function Calculadora:div()
     end
 end
 
-print("Bienvenido a la calculadora Lua!\n")
+function Calculadora:operacionIterativa()
+    local t={self.num1,self.num2}
+    local res=0
+    for i,j in ipairs(t) do
+        res = res + i*j
+    end
+    return res
+end
+
+print("Bienvenido a la calculadora Lua!")
+print("Introduzca un número para la calculadora:")
 
 --Declaramos el objeto y definimos las operaciones que queremos que haga
 
-calc=Calculadora:new(nil,3,4)
+n1=io.read("n")
+io.write("Introduzca un segundo número: \n")
+n2=io.read("n")
+
+calc=Calculadora:new(nil,n1,n2)
 print(calc:suma())
+print(calc:operacionIterativa())
