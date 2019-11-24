@@ -42,6 +42,12 @@ function Calculadora:div()
     end
 end
 
+function Calculadora:conjunto(...)
+    for _, j in ipairs{...} do
+        print(self.num1+j)
+    end
+end
+
 function Calculadora:operacionIterativa()
     local t={self.num1,self.num2}
     local res=0
@@ -51,6 +57,7 @@ function Calculadora:operacionIterativa()
     return res
 end
 
+
 print("Bienvenido a la calculadora Lua!")
 print("Introduzca un número para la calculadora:")
 
@@ -59,7 +66,10 @@ print("Introduzca un número para la calculadora:")
 n1=io.read("n")
 io.write("Introduzca un segundo número: \n")
 n2=io.read("n")
+print ""
 
 calc=Calculadora:new(nil,n1,n2)
-print(calc:suma())
-print(calc:operacionIterativa())
+print("Suma: "..calc:suma())
+print("Operación iterativa: "..calc:operacionIterativa())
+print("Operación conjunto: ")
+calc:conjunto(2,3,4,5,10)

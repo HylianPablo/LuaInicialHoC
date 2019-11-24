@@ -2,7 +2,7 @@
 --Se explican en ella los conceptos básicos del lenguaje Lua
 --@HylianPablo
 
-print("Bienvenido a la calculadora Lua!\n")
+print("Bienvenido a la calculadora Lua!\n") --Parentesis opcionales en funciones con un solo parámetro y dicho parámetro es string o tabla
 print("Introduzca el primer número por favor: ")
 num1=io.read("n")
 print("Introduzca el segundo número por favor: ")
