@@ -37,9 +37,10 @@ local tableChoice = {
     [1] = suma,
     [2] = resta,
     [3] = mult,
-    [4] = div,
+    [4]= div,
     [5] = various
 }
+
 
 local varChoice = tableChoice[choice]
 if choice ~= 5 then

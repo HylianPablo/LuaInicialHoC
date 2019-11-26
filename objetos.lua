@@ -5,12 +5,10 @@
 
 Calculadora={num1=0,num2=0}
 
-function Calculadora:new(o,n1,n2)
+function Calculadora:new(o)
     o = o or {}
-    setmetatable(o,self)
     self.__index=self
-    self.num1=n1
-    self.num2=n2
+    setmetatable(o,self)
     return o
 end
 
@@ -42,12 +40,6 @@ function Calculadora:div()
     end
 end
 
-function Calculadora:conjunto(...)
-    for _, j in ipairs{...} do
-        print(self.num1+j)
-    end
-end
-
 function Calculadora:operacionIterativa()
     local t={self.num1,self.num2}
     local res=0
@@ -56,6 +48,13 @@ function Calculadora:operacionIterativa()
     end
     return res
 end
+
+function Calculadora:conjunto(...)
+    for _, j in ipairs{...} do
+        print(self.num1+j)
+    end
+end
+
 
 
 print("Bienvenido a la calculadora Lua!")
@@ -68,8 +67,14 @@ io.write("Introduzca un segundo número: \n")
 n2=io.read("n")
 print ""
 
-calc=Calculadora:new(nil,n1,n2)
+calc=Calculadora:new()
+calc2=Calculadora:new()
+calc:setNum1(n1)
+calc:setNum2(n2)
+calc2:setNum1(1)
+calc2:setNum2(2)
 print("Suma: "..calc:suma())
+print("Suma2: "..calc2:suma())
 print("Operación iterativa: "..calc:operacionIterativa())
 print("Operación conjunto: ")
 calc:conjunto(2,3,4,5,10)
