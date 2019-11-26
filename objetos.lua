@@ -55,6 +55,20 @@ function Calculadora:conjunto(...)
     end
 end
 
+function Calculadora:addNum(n3)
+    tab={self.num1,self.num2}
+    table.insert(tab,n3)
+    return tab
+end
+
+function Calculadora:sumaTotal(t)
+    res=0
+    for i=1,#t do
+        res=res+t[i]
+    end
+    return res
+end
+
 
 
 print("Bienvenido a la calculadora Lua!")
@@ -78,3 +92,6 @@ print("Suma2: "..calc2:suma())
 print("Operación iterativa: "..calc:operacionIterativa())
 print("Operación conjunto: ")
 calc:conjunto(2,3,4,5,10)
+print("%%%%%%%%%%%%%%%%%%%%%%%")
+t=calc:addNum(100)
+print(calc:sumaTotal(t))

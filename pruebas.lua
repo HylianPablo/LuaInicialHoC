@@ -1,8 +1,10 @@
-arr={}
-for i=1,10 do
-    table.insert(arr,i)
-end
+a={}
+a[2]=3
+a[1]=4
 
-for i=1, #arr do
-    print(arr[i])
+for i=1, #a do
+    print(a[i])
 end
+b = 3.0
+
+print(b%2.0)
