@@ -49,7 +49,7 @@ function Calculadora:operacionIterativa()
     return res
 end
 
-function Calculadora:conjunto(...)
+function Calculadora:conjunto(...)  --Forma pedante: variadic functions
     for _, j in ipairs{...} do
         print(self.num1+j)
     end
@@ -57,13 +57,19 @@ end
 
 function Calculadora:addNum(n3)
     tab={self.num1,self.num2}
-    table.insert(tab,n3)
+    table.insert(tab,n3)  --contrario table.remove
+    a,b,c = table.unpack(tab)
+    print "Unpack:"
+    print (a)
+    print (b)
+    print (c)
+    print ""
     return tab
 end
 
 function Calculadora:sumaTotal(t)
     res=0
-    for i=1,#t do
+    for i=1,#t do      --# toma el tamaño de la tabla
         res=res+t[i]
     end
     return res
